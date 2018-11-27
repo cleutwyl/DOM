@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="container"></div>
+<div id="container2"></div>
+<script>
+
+    const start2 = +new Date();
+    const fragment = document.createDocumentFragment();
+    for (let i = 0; i < 100000; i++) {
+        const newEl = document.createElement('div');
+        newEl.appendChild(document.createTextNode('Hello'));
+        fragment.appendChild(newEl)
+    }
+    document.getElementById("container2").appendChild(fragment);
+    console.log(new Date() - start2);
+
+
+</script>
+
+</body>
+</html>

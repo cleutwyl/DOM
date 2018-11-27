@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="container">
+    <div id="content1">content 1</div>
+    <div id="content2">content 2</div>
+</div>
+<script>
+    document.getElementById("container").addEventListener("click", (args) => {
+        console.log("container")
+    });
+
+    document.getElementById("content1").addEventListener("click", (args) => {
+        console.log("content1")
+    });
+
+    document.getElementById("content2").addEventListener("click", (args) => {
+        console.log("content2");
+        args.stopPropagation();
+    });
+
+</script>
+
+</body>
+</html>

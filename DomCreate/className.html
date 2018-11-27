@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="el" class="box alert important"></div>
+
+<script>
+    console.log(document.getElementById("el").className); // box alert important
+    console.log(document.getElementById("el").classList); // DOMTokenList(3) ["box", "alert", "important"]
+
+    const list = document.getElementById("el").classList;
+    list.add("box2");
+    list.remove("box");
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="container"></div>
+<div id="container2"></div>
+<script>
+    const start = +new Date();
+    for (let i = 0; i < 100000; i++) {
+        const newEl = document.createElement('div');
+        newEl.appendChild(document.createTextNode('Hello'));
+        document.getElementById("container").appendChild(newEl);
+    }
+    console.log(new Date() - start);
+
+</script>
+
+</body>
+</html>
