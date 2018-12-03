@@ -3,11 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        div{
+            border: 1px black solid;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
 <div id="container">
-    <div id="content1">content 1</div>
-    <div id="content2">content 2</div>
+    <div id="content1">ohne stopPropagation</div>
+    <div id="content2">mit stopPropagation</div>
 </div>
 <script>
     document.getElementById("container").addEventListener("click", (args) => {
