@@ -6,6 +6,8 @@
 </head>
 <body>
 
+<button id="add">Add Entry</button>
+
 <ul id="container">
     <li class="js-item-container" data-id="1">
         item 1
@@ -20,13 +22,23 @@
     <li class="js-item-container" data-id="16">item 16 <input class="js-delete" type="button" value="X"></li>
 </ul>
 
+
+
 <script>
     const container = document.getElementById("container");
 
+    let counter = 999;
+    document.getElementById("add").addEventListener("click", () => {
+        container.insertAdjacentHTML('beforeend', `<li class="js-item-container" data-id="${counter}">item ${counter}<input class="js-delete" type="button" value="X"></li>`)
+        counter--;
+    });
+
     container.addEventListener("click", (args) => {
-        const id = args.target.closest(".js-item-container").dataset.id;
+        const container = args.target.closest(".js-item-container");
+        const id = container.dataset.id;
         if (args.target.classList.contains("js-delete")) {
             console.log("remove", id);
+            container.parentNode.removeChild(container);
             args.stopPropagation();
         }
         else if (args.target.classList.contains("js-add")) {
