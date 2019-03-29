@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,32 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-<nav>
-    <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
-    </ul>
-</nav>
 <main>
-    <p>Anzahl Einträge: 3</p>
     <button id="addButton">Hinzufügen</button>
-
     <ul id="list-container">
         <li>1</li>
         <li>2</li>
         <li>3</li>
         <li>4</li>
     </ul>
-
 </main>
 <script>
     const listContainer = document.getElementById('list-container');
+    const liItems = document.getElementsByTagName('li');
+
     document.getElementById("addButton").addEventListener('click', () => {
         const li = document.createElement('li');
-        li.appendChild(document.createTextNode(listContainer.childElementCount + 1));
+        li.appendChild(document.createTextNode(liItems.length + 1));
         listContainer.appendChild(li);
+        console.log(liItems.length);
     })
 </script>
 </body>
