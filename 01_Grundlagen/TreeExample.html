@@ -37,7 +37,17 @@
         }
     }
 
-    printTree(document.children[0], 0)
+    printTree(document.children[0], 0);
+
+    function printTree_with_whitespaces(node, level) {
+        console.log("".padStart(level * 2), node.tagName);
+
+        for (const nodeChild of node.childNodes) {
+            printTree_with_whitespaces(nodeChild, level + 1);
+        }
+    }
+    // printTree_with_whitespaces(document.children[0], 0);
+
 </script>
 
 </body>
