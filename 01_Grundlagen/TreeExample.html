@@ -39,8 +39,8 @@
 
     printTree(document.children[0], 0);
 
-    function printTree_with_whitespaces(node, level) {
-        console.log("".padStart(level * 2), node.tagName);
+        function printTree_with_whitespaces(node, level) {
+        console.log("".padStart(level * 2), node.tagName || node.nodeName);
 
         for (const nodeChild of node.childNodes) {
             printTree_with_whitespaces(nodeChild, level + 1);
