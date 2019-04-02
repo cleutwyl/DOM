@@ -30,19 +30,10 @@
     const navItems = document.getElementsByClassName('nav-item');
     console.log(Array.isArray(navItems));
 
-
     console.log(navItems);
 
     for (let i = 0; i < navItems.length; i++) {
         console.log("for", navItems[i]);
-    }
-
-    Array.prototype.slice.call(navItems).forEach(function (value) {
-        console.log("forEach", value);
-    });
-
-    for (const item of Array.prototype.slice.call(navItems)) {
-        console.log("array.call", item);
     }
 
     for (const item of Array.from(navItems)) {
@@ -52,6 +43,11 @@
     for (const item of navItems) {
         console.log("for of", item);
     }
+
+    Array.from(navItems)
+        .filter((el, i) => i % 2 === 0)
+        .forEach(el => el.style = "background: green");
+
 </script>
 </body>
 </html>
