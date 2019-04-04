@@ -5,13 +5,17 @@
     <title>Title</title>
 
     <script>
-        window.addEventListener('load', () => console.log("load"));
-        document.addEventListener('DOMContentLoaded', () =>  console.log("ready"));
+        window.addEventListener('load', () => console.log("load", document.readyState));
+        document.addEventListener('DOMContentLoaded', () =>  console.log("ready", document.readyState));
     </script>
 
     <script src="script.js" defer></script>
     <script src="script1.js" defer></script>
     <script src="script2.js" defer></script>
+
+    <script>
+        console.log("body", document.readyState);
+    </script>
 </head>
 <body>
 
