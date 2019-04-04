@@ -25,19 +25,18 @@
 </main>
 
 <script>
-    function printTree(node, level) {
-        console.log("".padStart(level * 2), node.tagName);
 
-        for (const attr of node.attributes) {
-            console.log("".padStart((level + 1) * 2), "ATTR", `${attr.name}=${attr.value}`);
-        }
 
-        for (const nodeChild of node.children) {
-            printTree(nodeChild, level + 1);
+    function printTree_with_whitespaces(node, level) {
+        console.log("".padStart(level * 2), node.tagName || node.nodeName);
+
+        for (const nodeChild of node.childNodes) {
+            printTree_with_whitespaces(nodeChild, level + 1);
         }
     }
 
-    printTree(document.children[0], 0);
+    printTree_with_whitespaces(document.children[0], 0);
+
 </script>
 
 </body>
