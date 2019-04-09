@@ -11,14 +11,14 @@
 
 <script>
 
-    var element  = document.getElementById('container');
+    const element  = document.getElementById('container');
 
-    var fragment = document.createDocumentFragment();
-    var browsers = ['Firefox', 'Chrome', 'Opera',
+    const fragment = document.createDocumentFragment();
+    const browsers = ['Firefox', 'Chrome', 'Opera',
         'Safari', 'Internet Explorer'];
 
     browsers.forEach(function(browser) {
-        var li = document.createElement('li');
+        const li = document.createElement('li');
         li.textContent = browser;
         fragment.appendChild(li);
     });
